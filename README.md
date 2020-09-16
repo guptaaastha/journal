@@ -1,3 +1,9 @@
+# JOURNAL
+
+### A simple ReactJS web app to save your diary entries on the go. You can add and delete entries which are stored temporarily on the browser.
+
+<img src="public/images/journal.gif" alt="journal-gif" height="500">
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

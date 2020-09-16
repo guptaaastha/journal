@@ -1,24 +1,42 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import Heading from "./components/Heading";
+import CreateArea from "./containers/CreateArea";
+import Entry from "./components/Entry";
+import Footer from "./components/Footer";
 
 function App() {
+  const [entries, setEntries] = useState([]);
+
+  function addEntry(newNote) {
+    setEntries((prevEntries) => {
+      return [...prevEntries, newNote];
+    });
+  }
+
+  function deleteEntry(id) {
+    setEntries((prevEntries) => {
+      return prevEntries.filter((entryItem, index) => {
+        return index !== id;
+      });
+    });
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Heading />
+      <CreateArea onAdd={addEntry} />
+      {entries.map((entryItem, index) => {
+        return (
+          <Entry
+            key={index}
+            id={index}
+            title={entryItem.title}
+            content={entryItem.content}
+            onDelete={deleteEntry}
+          />
+        );
+      })}
+      <Footer />
     </div>
   );
 }

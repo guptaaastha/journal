@@ -1,0 +1,14 @@
+.Heading h1 {
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 30px;
+  font-family: "Sacramento", cursive;
+  font-size: 5em;
+}
+
+.Heading hr {
+  margin-top: 0;
+  margin-bottom: 0;
+  width: 20%;
+  border-top: 7px dotted;
+}
