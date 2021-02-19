@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Heading from "./components/Heading";
 import CreateArea from "./containers/CreateArea";
 import Entry from "./components/Entry";
@@ -6,6 +6,15 @@ import Footer from "./components/Footer";
 
 function App() {
   const [entries, setEntries] = useState([]);
+
+  useEffect(() => {
+    const entryData = localStorage.getItem("my-entries");
+    if (entryData) setEntries(JSON.parse(entryData));
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("my-entries", JSON.stringify(entries));
+  });
 
   function addEntry(newNote) {
     setEntries((prevEntries) => {
