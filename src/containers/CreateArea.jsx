@@ -4,7 +4,11 @@ import { ToastProvider, useToasts } from "react-toast-notifications";
 import { BlockPicker } from "react-color";
 
 function CreateArea(props) {
-  const [entry, setEntry] = useState({ title: "", content: "" });
+  const [entry, setEntry] = useState({
+    title: "",
+    content: "",
+    colour: "#ffffff",
+  });
   const { addToast } = useToasts();
   const [color, setColor] = useState();
   const [pickerVisible, setPickerVisible] = useState(false);
@@ -32,6 +36,7 @@ function CreateArea(props) {
     setEntry({
       title: "",
       content: "",
+      colour: "#ffffff",
     });
   }
 
@@ -60,16 +65,18 @@ function CreateArea(props) {
             }}
           />
           {pickerVisible && (
-            <div
-              style={{
-                position: "absolute",
-              }}
-            >
+            <div style={{ position: "absolute" }}>
               <BlockPicker
                 color={color}
                 onChangeComplete={(c) => {
                   setColor(c);
                   setPickerVisible(false);
+                  setEntry((prevEntry) => {
+                    return {
+                      ...prevEntry,
+                      colour: c.hex,
+                    };
+                  });
                 }}
               />
             </div>
@@ -93,9 +100,10 @@ function CreateArea(props) {
               onClick={() => {
                 submitNote();
                 setPickerVisible(false);
+                setColor({ color: { hex: "#ffffff" } });
               }}
             >
-              +
+              add
             </button>
           </div>
         </div>

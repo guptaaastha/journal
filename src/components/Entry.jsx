@@ -8,7 +8,7 @@ function Entry(props) {
 
   return (
     <div className={classes.Entry}>
-      <div className={classes.topdiv}>
+      <div className={classes.topdiv} style={{ backgroundColor: props.colour }}>
         <h1>{props.title}</h1>
         <p>{props.content}</p>
         <button onClick={handleClick}>delete</button>
