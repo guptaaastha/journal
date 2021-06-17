@@ -9,6 +9,7 @@
     "@testing-library/user-event": "^7.2.1",
     "gh-pages": "^3.2.1",
     "react": "^16.13.1",
+    "react-color": "^2.19.3",
     "react-dom": "^16.13.1",
     "react-scripts": "^4.0.3",
     "react-toast-notifications": "^2.4.3",
