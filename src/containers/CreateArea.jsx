@@ -53,6 +53,7 @@ function CreateArea(props) {
             onChange={handleChange}
             placeholder="wanna put a title?"
             style={{ backgroundColor: color ? color.hex : "#ffffff" }}
+            autoComplete="off"
           />
           <textarea
             name="content"
@@ -63,6 +64,7 @@ function CreateArea(props) {
               backgroundColor: color ? color.hex : "#ffffff",
               marginTop: 25,
             }}
+            autoComplete="off"
           />
           {pickerVisible && (
             <div style={{ position: "absolute" }}>
@@ -86,16 +88,14 @@ function CreateArea(props) {
               width: "100%",
               display: "flex",
               justifyContent: "space-between",
+              alignItems: "center",
               padding: 0,
               margin: 0,
             }}
           >
-            <p
-              style={{ margin: 0, padding: 0, fontSize: 20, cursor: "pointer" }}
-              onClick={() => setPickerVisible(!pickerVisible)}
-            >
-              ✏️
-            </p>
+            <button onClick={() => setPickerVisible(!pickerVisible)}>
+              /pick-color
+            </button>
             <button
               onClick={() => {
                 submitNote();
