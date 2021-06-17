@@ -43,6 +43,7 @@ function App() {
               id={index}
               title={entryItem.title}
               content={entryItem.content}
+              colour={entryItem.colour}
               onDelete={deleteEntry}
             />
           );
