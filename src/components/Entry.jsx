@@ -2,8 +2,18 @@ import React from "react";
 import classes from "./Entry.module.css";
 
 function Entry(props) {
-  function handleClick() {
+  function handleDelete() {
     props.onDelete(props.id);
+  }
+
+  function handleEdit() {
+    const currentEntry = {
+      title: props.title,
+      content: props.content,
+      colour: props.colour,
+      id: props.id,
+    };
+    props.onEdit(currentEntry);
   }
 
   return (
@@ -11,7 +21,10 @@ function Entry(props) {
       <div className={classes.topdiv} style={{ backgroundColor: props.colour }}>
         <h1>{props.title}</h1>
         <p>{props.content}</p>
-        <button onClick={handleClick}>delete</button>
+        <div className={classes.buttons}>
+          <button onClick={handleEdit}>edit</button>
+          <button onClick={handleDelete}>delete</button>
+        </div>
       </div>
     </div>
   );
