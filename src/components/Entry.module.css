@@ -1,4 +1,4 @@
-.Entry button {
+.buttons button {
   top: 180px;
   right: 10px;
   color: #000000 !important;
@@ -14,11 +14,17 @@
   font-family: "Courier New", Courier, monospace;
 }
 
-.Entry button:hover {
+.buttons button:hover {
   color: #ffffff !important;
   background: #000000;
   border: 2px solid #ffffff;
   font-family: "Courier New", Courier, monospace;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .Entry div {
