@@ -1,6 +1,6 @@
 # JOURNAL
 
-#### A simple ReactJS web app to save your diary entries on the go. You can select colour, add and delete entries which are stored on the browser.
+#### A simple ReactJS web app to save your diary entries on the go. You can select colour, add, edit and delete entries which are stored on the browser.
 
 <img src="public/images/journal.gif" alt="journal-gif" height="500">
 
